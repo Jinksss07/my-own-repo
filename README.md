@@ -1,26 +1,40 @@
-SPDX-License-Identifier: MIT
-pragma solidity 0.8.18;
+# SolidityAssessment
 
-contract MyToken {
-    
-    // public variables here
-        string public tokenName = "INTERNET";
-        string public tokenAbbrv = "INET";
-        uint public totalSupply =0;
+This file is all about the final project of ETH PROOF: Beginner EVM Course. 
 
-    // mapping variable here
-        mapping(address => uint) public bal;
+## PROJECT: Create A Token
 
-    // mint function
-        function mint(address add, uint val) public{
-            totalSupply += val;
-            bal[add] += val;
+This code will show us how to mint our first ever token, and how to burn it afterwards.
+
+## Creating The Program
+
+Go to https://remix.ethereum.org/ a online IDE to create our Program
+
+# Executing Program
+
+## The Minting Progress
+
+function minting (address _add, uint _val) public{
+        tokenttlsply += _val;
+        balance[_add]+= _val;
+    }
+
+We Create a Function with a purpose of Minting the Token thus we called it Minting
+We will get the address with a value of _add and a none negative number for the value of our token
+
+the tokenttlsply will show us the total supply of our token after minting 
+the balance will show us the total balance of token in our address minting
+
+## The Burning Progress
+
+function burning (address _add, uint _val) public{
+        if(balance[_add] >= _val){
+            tokenttlsply -= _val;
+            balance[_add] -= _val;
         }
-    // burn function
-        function burn(address add, uint val) public{
-            if(bal[add] >= val){
-                totalSupply -= val;
-                bal[add] -= val;
-            }
-        }
-     }
+ We Create a Function with a purpose of Burning the token thus we called it Burning
+ We will get the address with a value of _add and a none negative number for the value of our token
+
+ the tokenttlsply will shous us the total supply of our token after doing the burning process
+ the balance will show us the total balance of the token in our address after burning process
+
